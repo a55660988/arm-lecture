@@ -8,7 +8,7 @@
 	.global lock_mutex
 	.type lock_mutex, function
 lock_mutex:
-    @ INSERT CODE BELOW
+	@ INSERT CODE BELOW
 
 	ldr r1, =locked @ load const locked into reg1
 		
@@ -23,7 +23,7 @@ lock_mutex:
 		cmpeq r2, unlocked
 		bne .lock_loop @ if not unlock, continue loop check
 
-    @ END CODE INSERT
+	@ END CODE INSERT
 	bx lr
 
 	.size lock_mutex, .-lock_mutex
@@ -34,7 +34,7 @@ unlock_mutex:
 	@ INSERT CODE BELOW
 	ldr r1, =unlocked @ load const unlocked into reg1
 	str r1, [r0]
-    @ END CODE INSERT
+	@ END CODE INSERT
 	bx lr
 	.size unlock_mutex, .-unlock_mutex
 
